@@ -1,9 +1,7 @@
-
-
-module.exports = () => {
-    const cmd = data.toString().trim();
-    if (cmd === "pwd") {
-        console.log(process.cwd());
-    }
+module.exports = function () {
+  process.stdin.on("data", (data) => {
+    console.log(process.cwd());
     process.stdout.write("\nprompt >");
+  });
 }
+
